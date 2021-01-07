@@ -4,4 +4,6 @@ services:
     build: ./
     image: hanjadang-bot
     volumes:
-     - ./.env:/usr/src/app/.env
+     - ./.env:/home/runner/app/.env
+    security_opt: 
+      - seccomp=./chrome.json

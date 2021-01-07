@@ -18,7 +18,7 @@ module.exports = (msg, cmd, args, rest) => {
         const text = rest
         const content = getContent(replace(marked(text)))
 
-        const browser = await puppeteer.launch({defaultViewport: null})
+        const browser = await puppeteer.launch({executablePath: 'google-chrome-stable', defaultViewport: null})
         const page = await browser.newPage()
         await page.setContent(content)
         await page.setViewport({width: 768, height: 320})
