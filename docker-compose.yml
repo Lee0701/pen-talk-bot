@@ -7,3 +7,4 @@ services:
      - ./.env:/home/runner/app/.env
     security_opt: 
       - seccomp=./chrome.json
+    restart: always
