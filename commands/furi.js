@@ -11,7 +11,7 @@ marked.setOptions({
 
 const COLOR = '#dcddde'
 const FONT_SIZE = '120%'
-const BACKGROUND = '#36393f'
+const BACKGROUND = 'transparent'
 
 module.exports = (msg, cmd, args, rest) => {
     (async () => {
@@ -29,7 +29,7 @@ module.exports = (msg, cmd, args, rest) => {
             }
         })
         await page.setViewport(dimensions)
-        const buffer = await page.screenshot({fullPage: true})
+        const buffer = await page.screenshot({type: 'png', fullPage: true, omitBackground: true})
         
         const attachment = new Discord.MessageAttachment(buffer)
         msg.reply('', attachment)
