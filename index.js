@@ -13,7 +13,7 @@ bot.on('message', (msg) => {
 
     const text = msg.content
 
-    if(text.startsWith('子曰')) commands['子曰'](msg, '子曰', text.slice(2).trim())
+    if(text.startsWith('子曰')) commands['子曰'](msg, '子曰', [text.slice(2).trim()])
 
     if(text.substring(0, prefix.length) == prefix) {
         const command = text.substring(prefix.length, text.includes(' ') ? text.indexOf(' ') : text.length)

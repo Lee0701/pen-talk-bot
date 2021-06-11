@@ -11,7 +11,7 @@ module.exports = (msg, cmd, args, rest) => {
     const width = 10
     const totalWidth = leftWidth + width + rightWidth
     const height = 6
-    const lines = rest
+    const lines = args.join(' ')
             .match(new RegExp(`.{1,${Math.floor(width/2)}}`, 'g'))
             .map((line, i, arr) => (i == arr.length-1) ? '| ' + line : '  ' + line)
     lines.unshift('  ' + ' '.repeat(width) + '|')
